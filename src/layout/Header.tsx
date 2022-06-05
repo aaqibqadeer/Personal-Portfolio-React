@@ -1,4 +1,11 @@
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useThemeContext } from "../context/theme";
+
 const Header = ({ logo }) => {
+  const { darkTheme, toggleTheme } = useThemeContext();
+  const themeIcon = darkTheme ? solid("sun") : solid("moon");
+
   return (
     <div className="dizme_tm_header">
       <div className="container">
@@ -35,6 +42,18 @@ const Header = ({ logo }) => {
                   <span>Download CV</span>
                 </a>
               </li>
+              <FontAwesomeIcon
+                icon={themeIcon}
+                onClick={toggleTheme}
+                style={{
+                  color: darkTheme ? "#ebb800" : "white",
+                  width: "25px",
+                  height: "26px",
+                  backgroundColor: darkTheme ? "white" : "black",
+                  padding: "7px",
+                  borderRadius: "50%",
+                }}
+              />
             </ul>
           </div>
         </div>

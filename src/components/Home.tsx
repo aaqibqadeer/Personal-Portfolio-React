@@ -8,6 +8,7 @@ interface Props {
 
 const Home: React.FC<Props> = ({ dark }) => {
   const [data, setData] = useState<any>({});
+  const backgroundImage = `img/slider/${dark ? 2 : 1}.jpg`;
 
   const getData = async () => {
     setData(await fatchData("/static/info.json"));
@@ -22,8 +23,8 @@ const Home: React.FC<Props> = ({ dark }) => {
       <div className="dizme_tm_hero">
         <div
           className="background"
-          data-img-url={`img/slider/${dark ? 2 : 1}.jpg`}
-          // style={{ backgroundImage: `img/slider/${dark ? 2 : 1}.jpg` }}
+          // data-img-url={backgroundImage}
+          style={{ backgroundImage }}
         />
         <div className="container">
           <div className="content">

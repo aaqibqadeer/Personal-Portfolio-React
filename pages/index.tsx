@@ -10,6 +10,7 @@ import Process from "../src/components/Process";
 import Service from "../src/components/Service";
 import Skills from "../src/components/Skills";
 import Testimonial from "../src/components/Testimonial";
+import { useThemeContext } from "../src/context/theme";
 import Layout from "../src/layout/Layout";
 
 const Portfolio = dynamic(() => import("../src/components/Portfolio"), {
@@ -17,19 +18,21 @@ const Portfolio = dynamic(() => import("../src/components/Portfolio"), {
 });
 
 const Index = () => {
+  const { darkTheme } = useThemeContext();
+
   return (
-    <Layout>
+    <Layout dark={darkTheme}>
       <Head>
         <title>Dizme | Home</title>
       </Head>
-      <Home />
-      <Process />
-      <About />
+      <Home dark={darkTheme} />
+      <Process dark={darkTheme} />
+      <About dark={darkTheme} />
       <Portfolio />
-      <Skills />
-      <Service />
+      <Skills dark={darkTheme} />
+      <Service dark={darkTheme} />
       <Testimonial />
-      <Partners />
+      <Partners dark={darkTheme} />
       <News />
       <Newsletter />
       <Contact />

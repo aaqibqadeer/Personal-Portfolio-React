@@ -1,11 +1,11 @@
-import { Fragment } from "react";
+import { ThemeContextProvider } from "../src/context/theme";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Fragment>
+    <ThemeContextProvider>
       <Component {...pageProps} />
-    </Fragment>
+    </ThemeContextProvider>
   );
 }
 
