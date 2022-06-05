@@ -5,16 +5,10 @@
       "static/chunks/node_modules_next_dist_pages__error_js.js"
     ]
   },
-  "index-dark.jsx -> ../src/components/Portfolio": {
-    "id": "index-dark.jsx -> ../src/components/Portfolio",
+  "index.tsx -> ../src/components/Portfolio": {
+    "id": "index.tsx -> ../src/components/Portfolio",
     "files": [
-      "static/chunks/src_components_Portfolio_js.js"
-    ]
-  },
-  "index.jsx -> ../src/components/Portfolio": {
-    "id": "index.jsx -> ../src/components/Portfolio",
-    "files": [
-      "static/chunks/src_components_Portfolio_js.js"
+      "static/chunks/src_components_Portfolio_tsx.js"
     ]
   }
 }
