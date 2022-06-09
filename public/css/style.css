@@ -661,17 +661,17 @@ h6 {
   box-shadow: 24px 0px 72px rgba(54, 32, 152, 0.3);
 }
 .dizme_tm_hero .skills.illustrator {
-  background-color: #390000;
+  /* background-color: #390000; */
   top: 20px;
   left: -30px;
 }
 .dizme_tm_hero .skills.photoshop {
-  background-color: #001631;
+  /* background-color: #001631; */
   right: 70px;
   top: 80px;
 }
 .dizme_tm_hero .skills.figma {
-  background-color: #fff;
+  /* background-color: #fff; */
   bottom: 60px;
   left: 140px;
 }

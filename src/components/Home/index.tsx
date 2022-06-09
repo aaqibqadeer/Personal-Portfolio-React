@@ -1,5 +1,3 @@
-import parse from "html-react-parser";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { fatchData } from "../../utilits";
 import { HomeLayout } from "./Layout";
@@ -25,7 +23,7 @@ const SocialIcon = ({ social }) => {
       <ul>
         {social?.map((social, i) => (
           <li key={i}>
-            <a href={social.url}>
+            <a href={social.url} target="_blank" rel="noreferrer">
               <i className={social.icon} />
             </a>
           </li>
@@ -63,17 +61,15 @@ const BasicInfo = ({ data }) => {
 const ProfilePicture = ({ skills, img }) => {
   return (
     <>
-      <Image
-        src={img ? img : "/img/slider/avatar.png"}
-        alt="image"
-        layout="fill"
-      />
+      <div className="rounded-full">
+        <img src={img ? img : "/img/slider/avatar.jpg"} alt="image" />
+      </div>
 
       {skills?.map((skill, i) => {
         return (
           skill.icon && (
             <span key={i} className={`skills ${skill.name} anim_moveBottom`}>
-              {parse(skill.icon)}
+              <img src={`/img/icons/${skill.icon}.png`} alt="" />
             </span>
           )
         );
