@@ -1,5 +1,4 @@
 import { FC, Fragment, useEffect, useState } from "react";
-import CopyRight from "../components/CopyRight";
 import ImageView from "../components/popup/ImageView";
 import VideoPopup from "../components/popup/VideoPopup";
 import {
@@ -59,7 +58,7 @@ const Layout: FC<Props> = ({ children, dark }) => {
           }
         />
         {children}
-        <CopyRight brandName={siteInfo && siteInfo.brandName} />
+        {/* <CopyRight brandName={siteInfo && siteInfo.brandName} /> */}
         <Cursor />
         <Progressbar />
       </div>

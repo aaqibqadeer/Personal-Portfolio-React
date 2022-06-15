@@ -1,13 +1,9 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import About from "../src/components/About";
-import Contact from "../src/components/Contact";
 import Home from "../src/components/Home";
 import News from "../src/components/News";
-import Newsletter from "../src/components/Newsletter";
-import Partners from "../src/components/Partners";
 import Process from "../src/components/Process";
-import Service from "../src/components/Service";
 import Skills from "../src/components/Skills";
 import Testimonial from "../src/components/Testimonial";
 import { useThemeContext } from "../src/context/theme";
@@ -23,19 +19,19 @@ const Index = () => {
   return (
     <Layout dark={darkTheme}>
       <Head>
-        <title>Dizme | Home</title>
+        <title>Aaqib Qadeer Soomro | Home</title>
       </Head>
       <Home dark={darkTheme} />
       <Process dark={darkTheme} />
       <About dark={darkTheme} />
       <Portfolio />
       <Skills dark={darkTheme} />
-      <Service dark={darkTheme} />
+      {/* <Service dark={darkTheme} /> */}
       <Testimonial />
-      <Partners dark={darkTheme} />
+      {/* <Partners dark={darkTheme} /> */}
       <News />
-      <Newsletter />
-      <Contact />
+      {/* <Newsletter /> */}
+      {/* <Contact /> */}
     </Layout>
   );
 };
