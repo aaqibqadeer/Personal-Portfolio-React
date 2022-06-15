@@ -5,7 +5,7 @@ import Home from "../src/components/Home";
 import { News } from "../src/components/News";
 import Process from "../src/components/Process";
 import Skills from "../src/components/Skills";
-import Testimonial from "../src/components/Testimonial";
+import { Testimonial } from "../src/components/Testimonial";
 import { useThemeContext } from "../src/context/theme";
 import Layout from "../src/layout/Layout";
 

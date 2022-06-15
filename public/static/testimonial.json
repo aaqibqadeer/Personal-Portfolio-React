@@ -1,20 +1,72 @@
-[
-  {
-    "name": "Mike Anderson",
-    "img": "img/testimonials/4.jpg",
-    "profession": "Vivaco Studio",
-    "details": "I rarely like to write reviews, but the Marketify team truly deserve a standing ovation for their customer support, customisation and most importantly, friendliness and professionalism. Many thanks once again for everything and hope that I get to deal with you again in the near future."
-  },
-  {
-    "name": "Keita Smith",
-    "img": "img/testimonials/3.jpg",
-    "profession": "ABC Group",
-    "details": "Really the Code Quality, Customer Support, and design are awesome and its good support they are giving. They give an instant solution to our needs. Really awesome. I will strongly recommend to my friends. Simply amazing team and amazing theme! Thank you from United States of America!"
-  },
-  {
-    "name": "Alan Walker",
-    "img": "img/testimonials/6.jpg",
-    "profession": "Web Designer",
-    "details": "Loved the template design, documentation, customizability and the customer support from Marketify team! I am a noob in programming with very little knowledge about coding but the Marketify team helped me to launch my resume website successfully. Much recommended!"
-  }
-]
+{
+  "title": "Testimonials",
+  "heading1": "What My Professors, Employers And Colleagues Say About Me",
+  "heading2": "Most common methods for designing websites that work well on desktop is responsive and adaptive design",
+  "testimonials": [
+    {
+      "name": "Twaha Ahmed Minai",
+      "className": "one",
+      "img": "https://media-exp2.licdn.com/dms/image/C4E03AQG2rxuis13cOQ/profile-displayphoto-shrink_400_400/0/1516333886024?e=1660780800&v=beta&t=pZVdBLmUQxIALBCdMwKM_bwOjWB7GdCqeWhQp6-LQww",
+      "profession": "Assistant Professor Of Computer Science",
+      "details": "Aaqib had been among my exceptional students at DSU. He has a natural capacity to analyze processes logically and to see a big picture always. I feel that he can do wonders during his professional and academic endeavors. Wish him success, happiness and prosperity always."
+    },
+    {
+      "name": "Ben Seidl",
+      "className": "two",
+      "img": "https://media-exp2.licdn.com/dms/image/C5603AQFQO1Ese9vLRg/profile-displayphoto-shrink_400_400/0/1589946474199?e=1660780800&v=beta&t=9EeF1AirTu2zI-xNCBqsXYq25GARqOR3lOXSjQfY6eU",
+      "profession": "Founder of Neyborly - Advisor at Remotebase - Investor Feld Ventures",
+      "details": "Aaqib was a crucial part of our team as we launched some of the company's most important software. He was diligent, productive, and was able to create innovative solutions for our backend."
+    },
+    {
+      "name": "Muhammad Abdullah",
+      "className": "three",
+      "img": "https://media-exp2.licdn.com/dms/image/C5603AQGvVL6rWjbq4g/profile-displayphoto-shrink_400_400/0/1628155597370?e=1660780800&v=beta&t=TOaWr15VqaTPSV0o8pyreEdpCMvQI-MMJawPkgpkuUY",
+      "profession": "Software Engineer at Fireflies.ai | MERN Stack Developer | Team lead at Remotebase",
+      "details": "Aaqib is a great team player and very easy to work with. He understands quickly and very good at researching. Would definitely want to work with him again"
+    },
+    {
+      "name": "Muhammad Azmi Umer",
+      "className": "four",
+      "img": "https://media-exp2.licdn.com/dms/image/C5603AQEW20DrFytERA/profile-displayphoto-shrink_400_400/0/1516483340774?e=1660780800&v=beta&t=mLB95k8oIBMpWAtoMbr6M8MhKLDAeimJuQunlerob54",
+      "profession": "Senior Lecturer at DHA Suffa University",
+      "details": "Aaqib is an intelligent student and an honest person. Overall, I have found him as a good human being."
+    },
+    {
+      "name": "M.Zain Rafique",
+      "className": "one",
+      "img": "https://media-exp2.licdn.com/dms/image/C5103AQHAw9TX0xHBDA/profile-displayphoto-shrink_400_400/0/1552568327494?e=1660780800&v=beta&t=HnWIt1LC0UUo-8ukUHVFO2JxQAPdQh_oVgCsW3_8xIk",
+      "profession": "Principal Software Engineer and Technical Team Lead(Ruby on Rails, Angular, Aws)",
+      "details": "I was particularly impressed by Aaqib's ability to handle even the toughest situation—effortlessly. He writes good quality code. He is a good developer and a good friend."
+    },
+    {
+      "name": "Shiraz Malkani",
+      "className": "two",
+      "img": "https://media-exp2.licdn.com/dms/image/C5103AQGENVyMv0TwDQ/profile-displayphoto-shrink_400_400/0/1517495398366?e=1660780800&v=beta&t=7wD9s8LxFsevooPrd9dWWNvPkp2jOYQwOamZhmNbSiU",
+      "profession": "Team Lead at QisstPay | x-Careem",
+      "details": "Aaqib is very hard working, honest with work, and intelligent. He is fast learner, and always eager to learn new technologies. Beside being hard worker and always looking for performing 110%, he is also a good socializer. Must to have on one's tech team."
+    },
+    {
+      "name": "Farhaj Ahmed",
+      "className": "three",
+      "img": "https://media-exp2.licdn.com/dms/image/C4E03AQFB-QKE1221Og/profile-displayphoto-shrink_400_400/0/1638441480362?e=1660780800&v=beta&t=Sq6nUiDXI3tv1iqSMh0lx8wLeuYv7n9zerNZhaoePxU",
+      "profession": "Software Engineer - iOS @ MMC Global | MBA - IBA '21 | Digital Creator",
+      "details": "I have observed Aaqib as a great problem solver. He is a quick learner who can unlearn, relearn and adapt to the latest tech-related practices. You will find him as a great team player. When it comes to writing clean code, he is the perfect fit for any company."
+    },
+    {
+      "name": "Muhammad Daniyal Atif",
+      "className": "eigth",
+      "img": "https://media-exp2.licdn.com/dms/image/C4D03AQHJzF5GuybufQ/profile-displayphoto-shrink_400_400/0/1617695839782?e=1660780800&v=beta&t=JgzcD0QsiqeSAkLk7CPBieyHi4CZshyqxUyJRlo2kwQ",
+      "profession": "Technical QA Engineer at The Talent Games | Test Automation Engineer",
+      "details": "Great problem solving skills. Keep up!",
+      "show": "false"
+    },
+    {
+      "name": "Fawad Afzal",
+      "className": "nine",
+      "img": "https://media-exp2.licdn.com/dms/image/C5603AQErI4Wrh9U92Q/profile-displayphoto-shrink_400_400/0/1580500706024?e=1660780800&v=beta&t=mo2bMgztmNiBhxJ2B567YE75icv1EJ16pfYLAZc_mao",
+      "profession": "Customer Success Executive at Gaditek",
+      "details": "A very efficient, professional and a hardworking person",
+      "show": "false"
+    }
+  ]
+}
