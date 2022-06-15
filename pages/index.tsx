@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import About from "../src/components/About";
 import Home from "../src/components/Home";
-import News from "../src/components/News";
+import { News } from "../src/components/News";
 import Process from "../src/components/Process";
 import Skills from "../src/components/Skills";
 import Testimonial from "../src/components/Testimonial";
