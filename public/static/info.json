@@ -4,21 +4,24 @@
   "bio": "I’m a software engineer over 2 years of experience in web development specializing in modern JavaScript, Typescript, React, Next.Js, Angular, Vue, Node and many other tools and technologies",
   "mainSkill": "Software Engineer",
   "img": "/img/slider/avatar.jpg",
+  "skillTitle": "Technical Skills",
+  "skillTagline": "I Develop Skills Regularly to Keep Myself Updated",
+  "skillDescription": "Over the past 2 years I have worked with different languages and frameworks (Python, Node/Express, Angular, Vue etc) but my current tech stack is following",
   "skills": [
     {
-      "name": "illustrator",
+      "name": "React",
       "icon": "react",
       "color": "rgb(247, 80, 35)",
       "value": 85
     },
     {
-      "name": "photoshop ",
+      "name": "Next.Js ",
       "icon": "nextjs",
       "color": "rgb(28, 190, 89)",
       "value": 95
     },
     {
-      "name": "figma ",
+      "name": "JavaScript/Typescript ",
       "icon": "typescript",
       "color": "rgb(128, 103, 240)",
       "value": 75
