@@ -60,7 +60,7 @@ const Layout: FC<Props> = ({ children, dark }) => {
       <VideoPopup />
       <div className="dizme_tm_all_wrap" data-magic-cursor="show">
         <MobileMenu logo={siteInfo?.logo?.[dark ? "dark" : "light"]} />
-        <Header logo={siteInfo?.logo?.[dark ? "dark" : "light"]} />
+        <Header />
         {children}
         {/* <CopyRight brandName={siteInfo && siteInfo.brandName} /> */}
         <Cursor />

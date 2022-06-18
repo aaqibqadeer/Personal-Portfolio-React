@@ -12,10 +12,11 @@ export const HeaderItem = ({ title, url }) => {
 };
 
 export const Logo = ({ logo }) => {
+  console.log({ logo });
   return (
     <div className="logo">
       <a href="#home">
-        {logo && <img src={logo ? logo : "img/logo/logo.png"} alt="image" />}
+        <img src={logo ? logo : "img/logo/logo.png"} alt="image" />
       </a>
     </div>
   );
@@ -31,7 +32,7 @@ export const ResumeButton = () => {
   );
 };
 
-const Header = ({ logo }) => {
+const Header = ({ logo }: { logo?: string }) => {
   const { darkTheme, toggleTheme } = useThemeContext();
   const themeIcon = darkTheme ? solid("sun") : solid("moon");
   const headerList = Object.values(header);
