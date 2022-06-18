@@ -1,113 +1,138 @@
-const DetailsPopup = ({ open, close }) => {
+import { projectList } from "../Portfolio/constant";
+
+export const CloseButton = ({ close }) => {
+  return (
+    <div className="close">
+      <a href={null} onClick={() => close()}>
+        <i className="icon-cancel" />
+      </a>
+    </div>
+  );
+};
+
+export const Info = ({ title, description }) => {
+  return (
+    <li>
+      <span className="first">{title}</span>
+      <span>{description}</span>
+    </li>
+  );
+};
+
+export const ImageItem = ({ image }) => {
+  const imagePath = `img/portfolio/${image}`;
+  return (
+    <li>
+      <div className="list_inner">
+        <div className="my_image">
+          <img src="img/thumbs/4-2.jpg" alt="image" />
+          <div
+            className="main"
+            data-img-url={imagePath}
+            style={{ backgroundImage: `url("${imagePath}")` }}
+          />
+        </div>
+      </div>
+    </li>
+  );
+};
+
+const DetailsPopupLayout = ({ children, closeButton, open }) => {
   return (
     <div className={`dizme_tm_modalbox ${open ? "opened" : ""}`}>
       <div className="box_inner">
-        <div className="close">
-          <a href="#" onClick={() => close()}>
-            <i className="icon-cancel" />
-          </a>
-        </div>
+        {closeButton}
         <div className="description_wrap">
-          <div className="popup_details">
-            <div className="top_image">
-              <img src="img/thumbs/4-2.jpg" alt="image" />
-              <div
-                className="main"
-                data-img-url="img/portfolio/6.jpg"
-                style={{ backgroundImage: 'url("img/portfolio/6.jpg")' }}
-              />
-            </div>
-            <div className="portfolio_main_title">
-              <h3>Global Evolution</h3>
-              <span>
-                <a href="#">Detail</a>
-              </span>
-              <div />
-            </div>
-            <div className="main_details">
-              <div className="textbox">
-                <p>
-                  We live in a world where we need to move quickly and iterate
-                  on our ideas as flexibly as possible.
-                </p>
-                <p>
-                  {`Mockups are useful both for the creative phase of the project
-                  - for instance when you're trying to figure out your user
-                  flows or the proper visual hierarchy - and the production
-                  phase when they phase when they will represent the target
-                  product. Building mockups strikes the ideal balance ease of
-                  modification.`}
-                </p>
-              </div>
-              <div className="detailbox">
-                <ul>
-                  <li>
-                    <span className="first">Client</span>
-                    <span>Alvaro Morata</span>
-                  </li>
-                  <li>
-                    <span className="first">Category</span>
-                    <span>
-                      <a href="#">Detail</a>
-                    </span>
-                  </li>
-                  <li>
-                    <span className="first">Date</span>
-                    <span>March 07, 2021</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="additional_images">
-              <ul>
-                <li>
-                  <div className="list_inner">
-                    <div className="my_image">
-                      <img src="img/thumbs/4-2.jpg" alt="image" />
-                      <div
-                        className="main"
-                        data-img-url="img/portfolio/1.jpg"
-                        style={{
-                          backgroundImage: 'url("img/portfolio/1.jpg")',
-                        }}
-                      />
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="list_inner">
-                    <div className="my_image">
-                      <img src="img/thumbs/4-2.jpg" alt="image" />
-                      <div
-                        className="main"
-                        data-img-url="img/portfolio/2.jpg"
-                        style={{
-                          backgroundImage: 'url("img/portfolio/2.jpg")',
-                        }}
-                      />
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="list_inner">
-                    <div className="my_image">
-                      <img src="img/thumbs/4-2.jpg" alt="image" />
-                      <div
-                        className="main"
-                        data-img-url="img/portfolio/3.jpg"
-                        style={{
-                          backgroundImage: 'url("img/portfolio/3.jpg")',
-                        }}
-                      />
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <div className="popup_details">{children}</div>
         </div>
       </div>
     </div>
   );
 };
-export default DetailsPopup;
+
+const TopImage = ({ imagePath }) => {
+  return (
+    <div className="top_image">
+      <img src="img/thumbs/4-2.jpg" alt="image" />
+      <div
+        className="main"
+        data-img-url={imagePath}
+        style={{ backgroundImage: `url("${imagePath}")` }}
+      />
+    </div>
+  );
+};
+
+const Heading = ({ title, href, category }) => {
+  return (
+    <div className="portfolio_main_title">
+      <h3>{title}</h3>
+      <span>
+        <a href={href}>{category}</a>
+      </span>
+      <div />
+    </div>
+  );
+};
+
+const MainDetail = ({ shortDesc, longDesc, client, date, category }) => {
+  return (
+    <div className="main_details">
+      <div className="textbox">
+        {shortDesc && <p>{shortDesc}</p>}
+        {longDesc && <p>{longDesc}</p>}
+      </div>
+      <div className="detailbox">
+        <ul>
+          {client && <Info title="Client" description={client} />}
+          <Info title="Category" description={<a href={null}>{category}</a>} />
+          {date && <Info title="Date" description={date} />}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+const AdditionImages = ({ images }) => {
+  return images ? (
+    <div className="additional_images">
+      <ul>
+        {images?.map((image) => (
+          <ImageItem image={image} key={image} />
+        ))}
+      </ul>
+    </div>
+  ) : null;
+};
+
+export const DetailsPopup = ({ open, close, id }) => {
+  const selectedProject = projectList.find((project) => project.id === id);
+  const {
+    image,
+    images,
+    href,
+    title,
+    category,
+    shortDesc,
+    longDesc,
+    client,
+    date,
+  } = selectedProject || {};
+  const imagePath = `img/portfolio/${image}`;
+  const closeButtonComponent = <CloseButton close={close} />;
+
+  return (
+    <DetailsPopupLayout closeButton={closeButtonComponent} open={open}>
+      <TopImage imagePath={imagePath} />
+      <Heading title={title} href={href} category={category} />
+      <MainDetail
+        shortDesc={shortDesc}
+        longDesc={longDesc}
+        client={client}
+        date={date}
+        category={category}
+      />
+      <AdditionImages images={images} />
+    </DetailsPopupLayout>
+  );
+};
