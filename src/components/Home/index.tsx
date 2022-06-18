@@ -68,7 +68,10 @@ const ProfilePicture = ({ skills, img }) => {
       {skills?.map((skill, i) => {
         return (
           skill.icon && (
-            <span key={i} className={`skills ${skill.name} anim_moveBottom`}>
+            <span
+              key={i}
+              className={`skills ${skill.className} anim_moveBottom`}
+            >
               <img src={`/img/icons/${skill.icon}.png`} alt="" />
             </span>
           )

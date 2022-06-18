@@ -14,18 +14,18 @@ const About: React.FC<Props> = ({ dark }) => {
         <div className="wrapper">
           <div className="left">
             <div className="image">
-              <img src={`img/about/${dark ? 2 : 1}.jpg`} alt="image" />
+              <img src={`img/about/1.png`} alt="image" />
               <Badge
                 className="year"
-                counterNumber={18}
+                counterNumber={2}
                 text1="Years of"
-                text2="Success"
+                text2="Experience"
               />
               <Badge
                 className="project"
-                counterNumber={9}
+                counterNumber={5}
                 text1="Total"
-                text2="Projects"
+                text2="Large Scale Projects"
               />
             </div>
           </div>
@@ -53,13 +53,7 @@ const About: React.FC<Props> = ({ dark }) => {
       </div>
 
       <div className="brush_1 wow fadeInLeft" data-wow-duration="1s">
-        <img
-          src="/img/brushes/about/1.png"
-          // width={300}
-          // height={300}
-          alt="image"
-          // layout="fill"
-        />
+        <img src="/img/brushes/about/1.png" alt="image" />
       </div>
 
       <div className="brush_2 wow fadeInRight" data-wow-duration="1s">

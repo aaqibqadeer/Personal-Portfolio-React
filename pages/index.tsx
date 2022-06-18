@@ -3,7 +3,6 @@ import Head from "next/head";
 import About from "../src/components/About";
 import Home from "../src/components/Home";
 import { News } from "../src/components/News";
-import Process from "../src/components/Process";
 import Skills from "../src/components/Skills";
 import { Testimonial } from "../src/components/Testimonial";
 import { useThemeContext } from "../src/context/theme";
@@ -22,7 +21,7 @@ const Index = () => {
         <title>Aaqib Qadeer Soomro | Home</title>
       </Head>
       <Home dark={darkTheme} />
-      <Process dark={darkTheme} />
+      {/* <Process dark={darkTheme} /> */}
       <About dark={darkTheme} />
       <Portfolio />
       <Skills dark={darkTheme} />

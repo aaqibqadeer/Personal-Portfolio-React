@@ -33,12 +33,24 @@ const Layout: FC<Props> = ({ children, dark }) => {
     setData();
   }, []);
 
-  useEffect(() => {
-    wowJsAnimation();
-    aTagClick();
+  const subscribeEvents = () => {
     window.addEventListener("scroll", scroll_);
     window.addEventListener("scroll", stickyNav);
     window.addEventListener("scroll", scrollTop);
+  };
+
+  const unsubscribeEvents = () => {
+    window.removeEventListener("scroll", scroll_);
+    window.removeEventListener("scroll", stickyNav);
+    window.removeEventListener("scroll", scrollTop);
+  };
+
+  useEffect(() => {
+    wowJsAnimation();
+    aTagClick();
+    subscribeEvents();
+
+    return () => unsubscribeEvents();
   }, []);
 
   return (
@@ -47,16 +59,8 @@ const Layout: FC<Props> = ({ children, dark }) => {
       <ImageView />
       <VideoPopup />
       <div className="dizme_tm_all_wrap" data-magic-cursor="show">
-        <MobileMenu
-          logo={
-            siteInfo && siteInfo.logo && siteInfo.logo[dark ? "dark" : "light"]
-          }
-        />
-        <Header
-          logo={
-            siteInfo && siteInfo.logo && siteInfo.logo[dark ? "dark" : "light"]
-          }
-        />
+        <MobileMenu logo={siteInfo?.logo?.[dark ? "dark" : "light"]} />
+        <Header logo={siteInfo?.logo?.[dark ? "dark" : "light"]} />
         {children}
         {/* <CopyRight brandName={siteInfo && siteInfo.brandName} /> */}
         <Cursor />

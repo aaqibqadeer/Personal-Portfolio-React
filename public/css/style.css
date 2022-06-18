@@ -660,17 +660,17 @@ h6 {
   position: absolute;
   box-shadow: 24px 0px 72px rgba(54, 32, 152, 0.3);
 }
-.dizme_tm_hero .skills.illustrator {
+.dizme_tm_hero .skills.React {
   /* background-color: #390000; */
   top: 20px;
   left: -30px;
 }
-.dizme_tm_hero .skills.photoshop {
+.dizme_tm_hero .skills.NextJs {
   /* background-color: #001631; */
   right: 70px;
   top: 80px;
 }
-.dizme_tm_hero .skills.figma {
+.dizme_tm_hero .skills.Typescript {
   /* background-color: #fff; */
   bottom: 60px;
   left: 140px;
@@ -683,10 +683,10 @@ h6 {
   width: 40px;
   height: 40px;
 }
-.dizme_tm_hero .skills.illustrator .svg {
+.dizme_tm_hero .skills.React .svg {
   color: #ff9a00;
 }
-.dizme_tm_hero .skills.photoshop .svg {
+.dizme_tm_hero .skills.NextJs .svg {
   color: #00a9ff;
 }
 .dizme_tm_down {
@@ -978,7 +978,7 @@ h6 {
   height: auto;
   clear: both;
   float: left;
-  padding-top: 185px;
+  padding-top: 112px;
   margin-bottom: 165px;
   position: relative;
 }
@@ -1744,6 +1744,7 @@ h6 {
   height: auto;
   clear: both;
   float: left;
+  padding-top: 112px;
   margin-bottom: 187px;
   position: relative;
 }
@@ -2056,7 +2057,7 @@ h6 {
   height: auto;
   clear: both;
   float: left;
-  padding-top: 185px;
+  padding-top: 112px;
   margin-bottom: 160px;
   position: relative;
 }
@@ -2917,14 +2918,14 @@ input[type="number"] {
     width: 25px;
     height: 25px;
   }
-  .dizme_tm_hero .skills.figma {
+  .dizme_tm_hero .skills.Typescript {
     bottom: 20px;
     left: 100px;
   }
-  .dizme_tm_hero .skills.photoshop {
+  .dizme_tm_hero .skills.NextJs {
     right: 110px;
   }
-  .dizme_tm_hero .skills.illustrator {
+  .dizme_tm_hero .skills.React {
     left: -20px;
   }
   .dizme_tm_process .icon .brush {

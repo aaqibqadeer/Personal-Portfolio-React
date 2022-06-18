@@ -41,7 +41,7 @@ export const Testimonial = () => {
   const { title, heading1, heading2 } = data || {};
 
   return (
-    <div className="dizme_tm_section tw-mt-40">
+    <div className="dizme_tm_section" id="testimonials">
       <div className="dizme_tm_testimonials tw-mb-0">
         <Heading title={title} heading1={heading1} heading2={heading2} />
         <div className="list_wrapper">

@@ -40,7 +40,7 @@ const Skills: React.FC<Props> = ({ dark }) => {
       </div>
 
       <div className="right">
-        <img src={`img/skills/${dark ? 2 : 1}.jpg`} alt="image" />
+        <img src={`img/skills/1.png`} alt="image" />
       </div>
     </SkillsLayout>
   );
