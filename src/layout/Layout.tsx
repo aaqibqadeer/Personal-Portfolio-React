@@ -12,7 +12,7 @@ import {
 } from "../utilits";
 import Cursor from "./Cursor";
 import Header from "./Header";
-import MobileMenu from "./MobileMenu";
+import { MobileMenu } from "./MobileMenu";
 import PreLoader from "./PreLoader";
 import Progressbar from "./Progressbar";
 
