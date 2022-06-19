@@ -12,7 +12,6 @@ export const HeaderItem = ({ title, url }) => {
 };
 
 export const Logo = ({ logo }) => {
-  console.log({ logo });
   return (
     <div className="logo">
       <a href="#home">
@@ -25,7 +24,7 @@ export const Logo = ({ logo }) => {
 export const ResumeButton = () => {
   return (
     <li className="download_cv">
-      <a href="img/cv/1.jpg" download="">
+      <a href="img/cv/CV.pdf" download>
         <span>Download CV</span>
       </a>
     </li>
