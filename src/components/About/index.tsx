@@ -1,13 +1,12 @@
 import Image from "next/image";
+import { useFetchJSON } from "../../hooks/useFetchJSON";
 import { AboutLayout } from "./AboutLayout";
 import { Badge } from "./Badge";
-import { AboutMeDescription, AboutMeTitle } from "./constant";
 
-interface Props {
-  dark?: boolean;
-}
-
-const About: React.FC<Props> = ({ dark }) => {
+const About = () => {
+  const { data } = useFetchJSON("/about");
+  const { tagline, title, bio, totalProject, experience } = data || {};
+  const { paragraph1, paragraph2, paragraph3, paragraph4 } = bio || {};
   return (
     <AboutLayout>
       <div className="container">
@@ -17,13 +16,13 @@ const About: React.FC<Props> = ({ dark }) => {
               <img src={`img/about/1.png`} alt="image" />
               <Badge
                 className="year"
-                counterNumber={2}
+                counterNumber={experience}
                 text1="Years of"
                 text2="Experience"
               />
               <Badge
                 className="project"
-                counterNumber={5}
+                counterNumber={totalProject}
                 text1="Total"
                 text2="Large Scale Projects"
               />
@@ -32,22 +31,25 @@ const About: React.FC<Props> = ({ dark }) => {
 
           <div className="right">
             <div className="title wow fadeInUp" data-wow-duration="1s">
-              <span>About Me</span>
-              <h3>{AboutMeTitle}</h3>
+              <span>{title}</span>
+              <h3>{tagline}</h3>
             </div>
 
             <div className="text wow fadeInUp" data-wow-duration="1s">
-              <p>{AboutMeDescription}</p>
+              <p className="tw-mb-2">{paragraph1}</p>
+              <p className="tw-mb-2">{paragraph2}</p>
+              <p className="tw-mb-2">{paragraph3}</p>
+              <p className="">{paragraph4}</p>
             </div>
 
-            <div
+            {/* <div
               className="dizme_tm_button wow fadeInUp"
               data-wow-duration="1s"
             >
               <a className="anchor" href="#contact">
                 <span>Learn more about me</span>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

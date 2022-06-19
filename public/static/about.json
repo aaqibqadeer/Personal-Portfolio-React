@@ -1,7 +1,12 @@
 {
-  "skill": "Designer",
-  "title": "I Can Design Anything You Want",
-  "bio": "Hello there! I'm a web designer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration.",
-  "totalProjectInThousand": "9",
-  "experience": 18
+  "title": "About Me",
+  "tagline": "I am a Software Engineer",
+  "bio": {
+    "paragraph1": "I’m a software engineer with a bit of interest in data science. I have over 2 years of experience in web development specializing in modern JavaScript, Typescript, Next.js, Angular, Vue.js, Node.js, Ruby on Rails, and many other tools and technologies.",
+    "paragraph2": "I have worked on different projects including a large-scale SAAS e-commerce project, User portal, Rental marketplace, and web app for transportation.",
+    "paragraph3": "I did my bachelor's degree in CS from DHA Suffa University and graduated with a very CGPA and multiple Dean's honor list awards.",
+    "paragraph4": "I have strong problem solving skills and good understanding of core programming concepts (OOP, data structures, database, and design pattern). During my free time, I write technical & non-technical blogs on medium"
+  },
+  "totalProject": 5,
+  "experience": 2
 }
