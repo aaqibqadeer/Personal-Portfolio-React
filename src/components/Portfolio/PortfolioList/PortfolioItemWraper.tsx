@@ -19,7 +19,7 @@ export const PortfolioItemWraper: React.FC<Props> = ({
 }) => {
   return (
     <li className={`grid-item ${className}`} onClick={() => onClick(id)}>
-      <div className="inner">
+      <div className="inner tw-border-2 tw-border-solid tw-border-slate-100">
         <div
           className="entry dizme_tm_portfolio_animation_wrap"
           data-title={title}

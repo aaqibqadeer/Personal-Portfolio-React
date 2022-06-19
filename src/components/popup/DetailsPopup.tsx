@@ -23,7 +23,7 @@ export const ImageItem = ({ image }) => {
   const imagePath = `img/portfolio/${image}`;
   return (
     <li>
-      <div className="list_inner">
+      <div className="list_inner tw-drop-shadow-lg">
         <div className="my_image">
           <img src="img/thumbs/4-2.jpg" alt="image" />
           <div
@@ -67,26 +67,48 @@ const Heading = ({ title, href, category }) => {
   return (
     <div className="portfolio_main_title">
       <h3>{title}</h3>
-      <span>
-        <a href={href}>{category}</a>
+      <span>{category}</span> |
+      <span className="tw-ml-2">
+        <a
+          href={href}
+          target="_blank"
+          className="tw-font-bold !tw-text-blue-600"
+          rel="noreferrer"
+        >
+          Live Preview
+        </a>
       </span>
       <div />
     </div>
   );
 };
 
-const MainDetail = ({ shortDesc, longDesc, client, date, category }) => {
+const MainDetail = ({
+  shortDesc,
+  longDesc,
+  client,
+  date,
+  category,
+  totalTime,
+  techStack,
+}) => {
   return (
     <div className="main_details">
       <div className="textbox">
         {shortDesc && <p>{shortDesc}</p>}
         {longDesc && <p>{longDesc}</p>}
+        {techStack && (
+          <p>
+            <span className="tw-font-bold">Tech Stack:</span> {techStack}
+          </p>
+        )}
       </div>
       <div className="detailbox">
         <ul>
           {client && <Info title="Client" description={client} />}
           <Info title="Category" description={<a href={null}>{category}</a>} />
           {date && <Info title="Date" description={date} />}
+          {totalTime && <Info title="Worked" description={totalTime} />}
         </ul>
       </div>
     </div>
@@ -117,6 +139,8 @@ export const DetailsPopup = ({ open, close, id }) => {
     longDesc,
     client,
     date,
+    totalTime,
+    techStack,
   } = selectedProject || {};
   const imagePath = `img/portfolio/${image}`;
   const closeButtonComponent = <CloseButton close={close} />;
@@ -131,6 +155,8 @@ export const DetailsPopup = ({ open, close, id }) => {
         client={client}
         date={date}
         category={category}
+        totalTime={totalTime}
+        techStack={techStack}
       />
       <AdditionImages images={images} />
     </DetailsPopupLayout>

@@ -27,21 +27,20 @@ export const PortfolioList: React.FC<Props> = ({ portfolioList, onClick }) => {
       <ul className="gallery_zoom grid">
         {portfolioList?.map((portfolio) => {
           const { title, href, image, type, id } = portfolio || {};
-          const { category, className, hoverImage } =
-            portfolioProps[type] || {};
+          const { className, hoverImage } = portfolioProps[type] || {};
 
           return (
             <PortfolioItemWraper
               id={id}
               key={id}
               title={title}
-              category={category}
+              category="Click to view detail"
               className={portfolio.category}
               onClick={type === portfolioType.DETAIL ? onClick : null}
             >
               <PortfolioDetailView
                 className={className}
-                href={href}
+                href={null}
                 portfolioImage={image}
                 hoverImage={hoverImage}
               />
