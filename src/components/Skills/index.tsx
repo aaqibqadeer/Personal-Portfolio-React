@@ -20,7 +20,7 @@ const Skills: React.FC<Props> = ({ dark }) => {
   }, []);
 
   useEffect(() => {
-    window.addEventListener("scroll", activeSkillProgress);
+    window?.addEventListener("scroll", activeSkillProgress);
   }, []);
 
   return (

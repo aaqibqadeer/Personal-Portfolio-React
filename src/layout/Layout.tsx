@@ -34,15 +34,15 @@ const Layout: FC<Props> = ({ children, dark }) => {
   }, []);
 
   const subscribeEvents = () => {
-    window.addEventListener("scroll", scroll_);
-    window.addEventListener("scroll", stickyNav);
-    window.addEventListener("scroll", scrollTop);
+    window?.addEventListener("scroll", scroll_);
+    window?.addEventListener("scroll", stickyNav);
+    window?.addEventListener("scroll", scrollTop);
   };
 
   const unsubscribeEvents = () => {
-    window.removeEventListener("scroll", scroll_);
-    window.removeEventListener("scroll", stickyNav);
-    window.removeEventListener("scroll", scrollTop);
+    window?.removeEventListener("scroll", scroll_);
+    window?.removeEventListener("scroll", stickyNav);
+    window?.removeEventListener("scroll", scrollTop);
   };
 
   useEffect(() => {

@@ -35,7 +35,7 @@ const Partners: React.FC<Props> = ({ dark }) => {
                         src={img.logo && img.logo[dark ? "dark" : "light"]}
                         alt="image"
                       />
-                      <a className="dizme_tm_full_link" a="" href={img.link} />
+                      <a className="dizme_tm_full_link" href={img.link} />
                     </div>
                   </li>
                 ))}

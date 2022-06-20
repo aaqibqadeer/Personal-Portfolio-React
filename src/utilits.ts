@@ -1,4 +1,5 @@
 import ReactDOM from "react-dom";
+
 const preloader_ = () => {
   let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(
     navigator.userAgent
@@ -23,10 +24,10 @@ const preloader_ = () => {
 
 export const wowJsAnimation = () => {
   setTimeout(() => {
-    if (typeof window !== "undefined") {
-      window.WOW = require("wowjs");
+    if (typeof window != "undefined") {
+      const WOW = require("wowjs");
+      new WOW.WOW().init();
     }
-    new WOW.WOW().init();
   }, 500);
 };
 export const customCursor = () => {
@@ -34,24 +35,25 @@ export const customCursor = () => {
     hamburger = document.querySelector(".hamburger"),
     kura_tm_topbar = document.querySelector(".kura_tm_topbar "),
     pointer = document.querySelector(".cursor-pointer"),
-    e = document.querySelector(".cursor-inner"),
-    t = document.querySelector(".cursor-outer");
+    e = document.querySelector<HTMLElement>(".cursor-inner"),
+    t = document.querySelector<HTMLElement>(".cursor-outer");
 
   function mouseEvent(element) {
+    // eslint-disable-next-line react/no-find-dom-node
     ReactDOM.findDOMNode(element).addEventListener("mouseenter", function () {
       e.classList.add("cursor-hover"), t.classList.add("cursor-hover");
     });
+    // eslint-disable-next-line react/no-find-dom-node
     ReactDOM.findDOMNode(element).addEventListener("mouseleave", function () {
       e.classList.remove("cursor-hover"), t.classList.remove("cursor-hover");
     });
   }
-  if (myCursor.length) {
+  if (myCursor.length && typeof window != "undefined") {
     if (document.body) {
       let n,
         i = 0,
         o = !1;
       (window.onmousemove = function (s) {
-        // console.log(document.querySelector(this));
         o ||
           (t.style.transform =
             "translate(" + s.clientX + "px, " + s.clientY + "px)"),
@@ -94,6 +96,7 @@ export const aTagClick = () => {
   const aTag = document.querySelectorAll("[href='#']");
   for (let i = 0; i < aTag.length; i++) {
     const a = aTag[i];
+    // eslint-disable-next-line react/no-find-dom-node
     ReactDOM.findDOMNode(a).addEventListener("click", (e) => {
       e.preventDefault();
     });
@@ -101,7 +104,7 @@ export const aTagClick = () => {
 };
 export const activeSkillProgress = () => {
   const progress_inner = document.querySelectorAll(".skillsInner___"),
-    triggerBottom = (window.innerHeight / 5) * 5;
+    triggerBottom = (window?.innerHeight / 5) * 5;
   progress_inner.forEach((box) => {
     const boxTop = box.getBoundingClientRect().top,
       boxElement = box.getElementsByClassName("bar"),
@@ -113,14 +116,17 @@ export const activeSkillProgress = () => {
     if (boxTop < triggerBottom) {
       boxItem.classList.add("open");
       label[0].classList.add("opened");
-      number[0].style.right = `${100 - pWidth}%`;
-      boxItem.getElementsByClassName("bar_in")[0].style.width = `${pWidth}%`;
-      boxItem.getElementsByClassName("bar_in")[0].style.backgroundColor =
-        pColor;
+      (number[0] as HTMLElement).style.right = `${100 - parseInt(pWidth)}%`;
+      (
+        boxItem.getElementsByClassName("bar_in")[0] as HTMLElement
+      ).style.width = `${pWidth}%`;
+      (
+        boxItem.getElementsByClassName("bar_in")[0] as HTMLElement
+      ).style.backgroundColor = pColor;
     } else {
       boxItem.classList.remove("open");
       label[0].classList.remove("opened");
-      number[0].style.right = `${120}%`;
+      (number[0] as HTMLElement).style.right = `${120}%`;
     }
   });
 };
@@ -129,9 +135,9 @@ export const dataImage = () => {
   let d = document.querySelectorAll("[data-img-url");
   for (let i = 0; i < d.length; i++) {
     const element = d[i];
-    element.style.backgroundImage = `url(${element.getAttribute(
-      "data-img-url"
-    )})`;
+    (
+      element as HTMLElement
+    ).style.backgroundImage = `url(${element.getAttribute("data-img-url")})`;
   }
 };
 
@@ -140,7 +146,7 @@ export const scroll_ = () => {
   const navLi = document.querySelectorAll(".anchor_nav li");
   let current = "";
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
+    const sectionTop = (section as HTMLElement).offsetTop;
     const sectionHeight = section.clientHeight;
     if (pageYOffset >= sectionTop - sectionHeight / 3) {
       current = section.getAttribute("id");
@@ -155,7 +161,7 @@ export const scroll_ = () => {
   });
 };
 export const stickyNav = () => {
-  let offset = window.scrollY;
+  let offset = window?.scrollY;
   const stickys = document.querySelectorAll(".dizme_tm_header");
   stickys.forEach((sticky) => {
     if (sticky) {
@@ -172,13 +178,13 @@ export const scrollTop = () => {
   var bar = document.querySelector(".progressbar");
   var line = document.querySelector(".progressbar .line");
   var documentHeight = document.documentElement.scrollHeight;
-  var windowHeight = window.innerHeight;
-  var winScroll = window.scrollY;
+  var windowHeight = window?.innerHeight;
+  var winScroll = window?.scrollY;
   var value = (winScroll / (documentHeight - windowHeight)) * 100;
   var position = value;
   if (winScroll > 100) {
     bar.classList.add("animate");
-    line.style.height = position + "%";
+    (line as HTMLElement).style.height = position + "%";
   } else {
     bar.classList.remove("animate");
   }
@@ -207,8 +213,12 @@ export const portfolioHover = () => {
           title + '<span class="work__cat">' + category + "</span>";
       }
       document.addEventListener("mousemove", (e) => {
-        dizme_tm_portfolio_titles.style.left = `${e.clientX - 10}px`;
-        dizme_tm_portfolio_titles.style.top = `${e.clientY + 25}px`;
+        (dizme_tm_portfolio_titles as HTMLElement).style.left = `${
+          e.clientX - 10
+        }px`;
+        (dizme_tm_portfolio_titles as HTMLElement).style.top = `${
+          e.clientY + 25
+        }px`;
       });
     });
     element.addEventListener("mouseleave", () => {

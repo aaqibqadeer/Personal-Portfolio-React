@@ -5,8 +5,8 @@ const Progressbar = () => {
     let scrollUp = document.getElementById("scroll-top"),
       lastScrollTop = 0;
 
-    window.addEventListener("scroll", () => {
-      let st = window.scrollY;
+    window?.addEventListener("scroll", () => {
+      let st = window?.scrollY;
       if (st > 110) {
         scrollUp.classList.add("active");
       } else {
@@ -15,7 +15,7 @@ const Progressbar = () => {
     });
   }, []);
   const onClick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window?.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
     <div className="progressbar">

@@ -22,7 +22,7 @@ const Index = () => {
       </Head>
       <Home dark={darkTheme} />
       {/* <Process dark={darkTheme} /> */}
-      <About dark={darkTheme} />
+      <About />
       <Portfolio />
       <Skills dark={darkTheme} />
       {/* <Service dark={darkTheme} /> */}

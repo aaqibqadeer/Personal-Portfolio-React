@@ -5,13 +5,13 @@ import Layout from "../../layout/Layout";
 import About from "../About";
 import Contact from "../Contact";
 import Home from "../Home";
-import News from "../News";
+import { News } from "../News";
 import Newsletter from "../Newsletter";
 import Partners from "../Partners";
 import Process from "../Process";
 import Service from "../Service";
 import Skills from "../Skills";
-import Testimonial from "../Testimonial";
+import { Testimonial } from "../Testimonial";
 
 const Portfolio = dynamic(() => import("../Portfolio"), {
   ssr: false,
@@ -29,7 +29,7 @@ const Index = () => {
       </Head>
       <Home dark />
       <Process dark />
-      <About dark />
+      <About />
       <Portfolio />
       <Skills dark />
       <Service dark />
