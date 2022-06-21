@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fatchData } from "../utilits";
+import { fatchData } from "../../utilits";
 const Contact = () => {
   const [data, setData] = useState<any>({});
 

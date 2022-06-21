@@ -81,7 +81,7 @@ const ProfilePicture = ({ skills, img }) => {
   );
 };
 
-const Home: React.FC<Props> = ({ dark }) => {
+export const Home: React.FC<Props> = ({ dark }) => {
   const [data, setData] = useState<any>({});
 
   const getData = async () => {
@@ -115,4 +115,3 @@ const Home: React.FC<Props> = ({ dark }) => {
     </HomeLayout>
   );
 };
-export default Home;

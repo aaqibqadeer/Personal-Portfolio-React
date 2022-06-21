@@ -1,4 +1,4 @@
-const BlogPopUp = ({ data, open, close }) => {
+export const BlogPopUp = ({ data, open, close }) => {
   return (
     <div className={`dizme_tm_modalbox ${open ? "opened" : ""}`}>
       {data && (
@@ -37,4 +37,3 @@ const BlogPopUp = ({ data, open, close }) => {
     </div>
   );
 };
-export default BlogPopUp;

@@ -1,4 +1,4 @@
-import { projectList } from "../Portfolio/constant";
+import { projectList } from "../../container/Portfolio/constant";
 
 export const CloseButton = ({ close }) => {
   return (

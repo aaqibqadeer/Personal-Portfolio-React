@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
+import { BlogPopUp } from "../../components";
 import { aTagClick, fatchData } from "../../utilits";
-import BlogPopUp from "../popup/BlogPopUp";
 import { BlogList } from "./BlogList";
 
 export const News = () => {

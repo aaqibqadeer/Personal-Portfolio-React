@@ -1,14 +1,10 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import About from "../src/components/About";
-import Home from "../src/components/Home";
-import { News } from "../src/components/News";
-import Skills from "../src/components/Skills";
-import { Testimonial } from "../src/components/Testimonial";
+import { About, Home, News, Skills, Testimonial } from "../src/container";
 import { useThemeContext } from "../src/context/theme";
 import Layout from "../src/layout/Layout";
 
-const Portfolio = dynamic(() => import("../src/components/Portfolio"), {
+const Portfolio = dynamic(() => import("../src/container/Portfolio"), {
   ssr: false,
 });
 

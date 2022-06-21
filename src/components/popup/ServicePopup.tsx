@@ -1,4 +1,4 @@
-const ServicePopup = ({ data, open, close }) => {
+export const ServicePopup = ({ data, open, close }) => {
   return (
     <div className={`dizme_tm_modalbox ${open ? "opened" : ""}`}>
       <div className="box_inner">
@@ -36,4 +36,3 @@ const ServicePopup = ({ data, open, close }) => {
     </div>
   );
 };
-export default ServicePopup;

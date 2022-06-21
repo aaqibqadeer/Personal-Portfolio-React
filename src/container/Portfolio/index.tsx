@@ -1,10 +1,10 @@
 import Isotope from "isotope-layout";
 import { useEffect, useRef, useState } from "react";
+import { Brushes } from "../../components/Brushes";
+import { DetailsPopup } from "../../components/popup/DetailsPopup";
 import { jsonFiles } from "../../constant/constant";
 import { useFetchJSON } from "../../hooks/useFetchJSON";
 import { dataImage, portfolioHover } from "../../utilits";
-import { Brushes } from "../Brushes";
-import { DetailsPopup } from "../popup/DetailsPopup";
 import {
   config,
   DELAY_TIME,

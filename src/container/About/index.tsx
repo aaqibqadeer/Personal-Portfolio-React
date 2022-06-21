@@ -3,7 +3,7 @@ import { useFetchJSON } from "../../hooks/useFetchJSON";
 import { AboutLayout } from "./AboutLayout";
 import { Badge } from "./Badge";
 
-const About = () => {
+export const About = () => {
   const { data } = useFetchJSON("/about");
   const { tagline, title, bio, totalProject, experience } = data || {};
   const { paragraph1, paragraph2, paragraph3, paragraph4 } = bio || {};
@@ -64,4 +64,3 @@ const About = () => {
     </AboutLayout>
   );
 };
-export default About;

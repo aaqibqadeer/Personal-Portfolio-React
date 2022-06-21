@@ -8,7 +8,7 @@ interface Props {
   dark?: boolean;
 }
 
-const Process: React.FC<Props> = ({ dark }) => {
+export const Process: React.FC<Props> = ({ dark }) => {
   const [data, setData] = useState([]);
 
   const getData = async () => {
@@ -53,4 +53,3 @@ const Process: React.FC<Props> = ({ dark }) => {
     </ProcessLayout>
   );
 };
-export default Process;

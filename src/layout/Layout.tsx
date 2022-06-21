@@ -1,6 +1,5 @@
 import { FC, Fragment, useEffect, useState } from "react";
-import ImageView from "../components/popup/ImageView";
-import VideoPopup from "../components/popup/VideoPopup";
+import { ImageView, VideoPopup } from "../components";
 import {
   aTagClick,
   dataImage,

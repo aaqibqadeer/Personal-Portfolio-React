@@ -1,7 +1,7 @@
 import parse from "html-react-parser";
 import { useEffect, useState } from "react";
-import { fatchData } from "../utilits";
-import ServicePopup from "./popup/ServicePopup";
+import { fatchData } from "../../utilits";
+import { ServicePopup } from "../popup";
 
 interface Props {
   dark?: boolean;

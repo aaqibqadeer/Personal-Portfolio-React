@@ -40,7 +40,7 @@ const VideoPopup_ = ({ close, videoID }) => {
   );
 };
 
-const VideoPopup = () => {
+export const VideoPopup = () => {
   const [video, setVideo] = useState(false);
   const [videoValue, setVideoValue] = useState(null);
   useEffect(() => {
@@ -69,5 +69,3 @@ const VideoPopup = () => {
     </Fragment>
   );
 };
-
-export default VideoPopup;

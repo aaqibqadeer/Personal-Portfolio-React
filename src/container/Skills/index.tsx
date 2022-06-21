@@ -8,7 +8,7 @@ interface Props {
   dark?: boolean;
 }
 
-const Skills: React.FC<Props> = ({ dark }) => {
+export const Skills: React.FC<Props> = ({ dark }) => {
   const [data, setData] = useState<Info>(null);
 
   const getData = async () => {
@@ -45,4 +45,3 @@ const Skills: React.FC<Props> = ({ dark }) => {
     </SkillsLayout>
   );
 };
-export default Skills;
