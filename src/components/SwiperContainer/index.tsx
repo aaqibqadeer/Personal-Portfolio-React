@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
-export const TestimonialSwiper = ({ data }) => {
+export const SwiperContainer = ({ data }) => {
   const props = {
     slidesPerView: 1,
     loop: true,

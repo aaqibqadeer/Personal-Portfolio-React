@@ -1,7 +1,7 @@
+import { preloader } from "@utility/utilits";
 import { useEffect } from "react";
-import { preloader } from "../utilits";
 
-const PreLoader = () => {
+export const PreLoader = () => {
   useEffect(() => {
     preloader();
   }, []);
@@ -12,4 +12,3 @@ const PreLoader = () => {
     </div>
   );
 };
-export default PreLoader;

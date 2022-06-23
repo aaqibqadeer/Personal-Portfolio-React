@@ -1,15 +1,20 @@
+import { HomeData } from "@constant/type";
+import { About, Home, News, Skills, Testimonial } from "@container";
+import { useThemeContext } from "@context";
+import { Layout } from "@layout";
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import { About, Home, News, Skills, Testimonial } from "../src/container";
-import { useThemeContext } from "../src/context/theme";
-import Layout from "../src/layout/Layout";
 
 const Portfolio = dynamic(() => import("../src/container/Portfolio"), {
   ssr: false,
 });
+interface Props {
+  content: HomeData;
+}
 
-const Index = () => {
+const Index: React.FC<Props> = ({ content }) => {
   const { darkTheme } = useThemeContext();
+  console.log({ content });
 
   return (
     <Layout dark={darkTheme}>
@@ -17,16 +22,11 @@ const Index = () => {
         <title>Aaqib Qadeer Soomro | Home</title>
       </Head>
       <Home dark={darkTheme} />
-      {/* <Process dark={darkTheme} /> */}
       <About />
       <Portfolio />
       <Skills dark={darkTheme} />
-      {/* <Service dark={darkTheme} /> */}
       <Testimonial />
-      {/* <Partners dark={darkTheme} /> */}
       <News />
-      {/* <Newsletter /> */}
-      {/* <Contact /> */}
     </Layout>
   );
 };

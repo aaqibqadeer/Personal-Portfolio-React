@@ -1,5 +1,5 @@
+import { fatchData } from "@utility/utilits";
 import { useEffect, useState } from "react";
-import { fatchData } from "../../utilits";
 
 interface Props {
   dark?: boolean;

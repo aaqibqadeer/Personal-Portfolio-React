@@ -1,4 +1,4 @@
-import Counter from "../../components/Counter";
+import Counter from "../Counter";
 
 export const Badge = ({ counterNumber, text1, text2, className }) => {
   return (

@@ -1,7 +1,7 @@
+import { fatchData } from "@utility/utilits";
 import parse from "html-react-parser";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { fatchData } from "../../utilits";
 import { ProcessLayout } from "./ProcessLayout";
 
 interface Props {

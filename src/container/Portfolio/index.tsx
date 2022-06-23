@@ -1,10 +1,10 @@
+import { Brushes } from "@components";
+import { DetailsPopup } from "@components/popup/DetailsPopup";
+import { jsonFiles } from "@constant/constant";
+import { dataImage, portfolioHover } from "@utility/utilits";
 import Isotope from "isotope-layout";
 import { useEffect, useRef, useState } from "react";
-import { Brushes } from "../../components/Brushes";
-import { DetailsPopup } from "../../components/popup/DetailsPopup";
-import { jsonFiles } from "../../constant/constant";
 import { useFetchJSON } from "../../hooks/useFetchJSON";
-import { dataImage, portfolioHover } from "../../utilits";
 import {
   config,
   DELAY_TIME,
@@ -45,7 +45,7 @@ const Portfolio = () => {
     setTimeout(() => {
       isotope.current = new Isotope(".gallery_zoom", config);
     }, DELAY_TIME);
-    return () => isotope.current.destroy();
+    return () => isotope?.current?.destroy();
   }, []);
 
   useEffect(() => {

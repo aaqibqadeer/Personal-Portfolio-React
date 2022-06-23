@@ -1,5 +1,3 @@
-import { FC, Fragment, useEffect, useState } from "react";
-import { ImageView, VideoPopup } from "../components";
 import {
   aTagClick,
   dataImage,
@@ -8,19 +6,18 @@ import {
   scroll_,
   stickyNav,
   wowJsAnimation,
-} from "../utilits";
-import Cursor from "./Cursor";
-import Header from "./Header";
-import { MobileMenu } from "./MobileMenu";
-import PreLoader from "./PreLoader";
-import Progressbar from "./Progressbar";
+} from "@utility/utilits";
+import { FC, Fragment, useEffect, useState } from "react";
+import { Cursor, Header, PreLoader, Progressbar } from "..";
+import { ImageView, VideoPopup } from "../../components";
+import { MobileMenu } from "../MobileMenu";
 
 interface Props {
   children?: React.ReactNode;
   dark?: boolean;
 }
 
-const Layout: FC<Props> = ({ children, dark }) => {
+export const Layout: FC<Props> = ({ children, dark }) => {
   const [siteInfo, setSiteInfo] = useState<any>({});
 
   const setData = async () => {
@@ -61,11 +58,9 @@ const Layout: FC<Props> = ({ children, dark }) => {
         <MobileMenu logo={siteInfo?.logo?.[dark ? "dark" : "light"]} />
         <Header />
         {children}
-        {/* <CopyRight brandName={siteInfo && siteInfo.brandName} /> */}
         <Cursor />
         <Progressbar />
       </div>
     </Fragment>
   );
 };
-export default Layout;

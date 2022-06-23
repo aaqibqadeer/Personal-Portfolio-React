@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 
-const Progressbar = () => {
+export const Progressbar = () => {
   useEffect(() => {
-    let scrollUp = document.getElementById("scroll-top"),
-      lastScrollTop = 0;
+    let scrollUp = document.getElementById("scroll-top");
 
     window?.addEventListener("scroll", () => {
       let st = window?.scrollY;
@@ -28,4 +27,3 @@ const Progressbar = () => {
     </div>
   );
 };
-export default Progressbar;

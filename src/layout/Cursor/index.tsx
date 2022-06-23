@@ -1,7 +1,7 @@
+import { customCursor } from "@utility/utilits";
 import { Fragment, useEffect } from "react";
-import { customCursor } from "../utilits";
 
-const Cursor = () => {
+export const Cursor = () => {
   useEffect(() => {
     customCursor();
   }, []);
@@ -13,4 +13,3 @@ const Cursor = () => {
     </Fragment>
   );
 };
-export default Cursor;

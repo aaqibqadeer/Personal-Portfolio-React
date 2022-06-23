@@ -1,5 +1,5 @@
+import { activeSkillProgress, fatchData } from "@utility/utilits";
 import { useEffect, useState } from "react";
-import { activeSkillProgress, fatchData } from "../../utilits";
 import { SkillsLayout } from "./SkillsLayout";
 import { SkillsList } from "./SkillsList";
 import { Info } from "./type";

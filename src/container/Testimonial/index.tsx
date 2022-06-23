@@ -1,3 +1,5 @@
+import { SwiperContainer } from "@components";
+import { fatchData } from "@utility/utilits";
 import { useEffect, useState } from "react";
 import SwiperCore, {
   Autoplay,
@@ -5,10 +7,8 @@ import SwiperCore, {
   Navigation,
   Pagination,
 } from "swiper";
-import { fatchData } from "../../utilits";
 import { BackgroundImages } from "./BackgroundImages";
 import { Heading } from "./Heading";
-import { TestimonialSwiper } from "./Swiper";
 
 SwiperCore.use([Pagination, Navigation, EffectFade, Autoplay]);
 
@@ -46,7 +46,7 @@ export const Testimonial = () => {
         <Heading title={title} heading1={heading1} heading2={heading2} />
         <div className="list_wrapper">
           <div className="total">
-            <TestimonialSwiper data={data} />
+            <SwiperContainer data={data} />
 
             <BackgroundImages
               testimonials={data?.testimonials?.slice(0, 4)}

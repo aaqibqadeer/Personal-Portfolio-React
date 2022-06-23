@@ -1,14 +1,14 @@
+import { Badge } from "@components";
 import Image from "next/image";
 import { useFetchJSON } from "../../hooks/useFetchJSON";
-import { AboutLayout } from "./AboutLayout";
-import { Badge } from "./Badge";
+import { AboutWrapper } from "./AboutWrapper";
 
 export const About = () => {
   const { data } = useFetchJSON("/about");
   const { tagline, title, bio, totalProject, experience } = data || {};
   const { paragraph1, paragraph2, paragraph3, paragraph4 } = bio || {};
   return (
-    <AboutLayout>
+    <AboutWrapper>
       <div className="container">
         <div className="wrapper">
           <div className="left">
@@ -61,6 +61,6 @@ export const About = () => {
       <div className="brush_2 wow fadeInRight" data-wow-duration="1s">
         <Image src="/img/brushes/about/2.png" alt="image" layout="fill" />
       </div>
-    </AboutLayout>
+    </AboutWrapper>
   );
 };

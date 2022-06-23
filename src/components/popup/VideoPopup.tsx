@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import useClickOutside from "../../useClickOutside";
+import useClickOutside from "../../utility/useClickOutside";
 
 const VideoPopup_ = ({ close, videoID }) => {
   let domNode = useClickOutside(() => {
