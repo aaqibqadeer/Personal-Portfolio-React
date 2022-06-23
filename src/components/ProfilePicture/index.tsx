@@ -2,7 +2,7 @@ export const ProfilePicture = ({ skills, img }) => {
   return (
     <>
       <div className="rounded-full">
-        <img src={img ? img : "/img/slider/avatar.jpg"} alt="image" />
+        <img src={img} alt="image" />
       </div>
 
       {skills?.map((skill, i) => {

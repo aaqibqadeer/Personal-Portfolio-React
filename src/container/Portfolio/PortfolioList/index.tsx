@@ -13,7 +13,7 @@ export const PortfolioList: React.FC<Props> = ({ projectList, onClick }) => {
     <div className="portfolio_list wow fadeInUp" data-wow-duration="1s">
       <ul className="gallery_zoom grid">
         {projectList?.map((project) => {
-          const { title, image, type, id } = project || {};
+          const { title, type, id, thumbnail } = project || {};
           const { className, hoverImage } = portfolioProps[type] || {};
 
           return (
@@ -28,7 +28,7 @@ export const PortfolioList: React.FC<Props> = ({ projectList, onClick }) => {
               <PortfolioDetailView
                 className={className}
                 href={null}
-                portfolioImage={image}
+                portfolioImage={thumbnail}
                 hoverImage={hoverImage}
               />
             </PortfolioItemWraper>

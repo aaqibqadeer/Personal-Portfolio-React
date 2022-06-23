@@ -33,7 +33,7 @@ export const Skills: React.FC<Props> = ({ skillsContent }) => {
       </div>
 
       <div className="right">
-        <img src={`img/skills/1.png`} alt="image" />
+        <img src={`img/skills/1.webp`} alt="image" />
       </div>
     </SkillsLayout>
   );

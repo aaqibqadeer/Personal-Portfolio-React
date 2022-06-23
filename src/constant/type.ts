@@ -97,8 +97,9 @@ export interface ProjectList {
   title: string;
   type: string;
   category: string;
-  image: string;
   href: string;
+  image: string;
+  thumbnail: string;
   images: string[];
   shortDesc: string;
   longDesc: string;

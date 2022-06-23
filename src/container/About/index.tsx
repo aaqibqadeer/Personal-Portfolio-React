@@ -16,7 +16,7 @@ export const About: React.FC<Props> = ({ aboutContent }) => {
         <div className="wrapper">
           <div className="left">
             <div className="image">
-              <img src={`img/about/1.png`} alt="image" />
+              <img src={`img/about/about.webp`} alt="image" />
               <Badge
                 className="year"
                 counterNumber={experience}
