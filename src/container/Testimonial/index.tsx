@@ -1,6 +1,5 @@
 import { SwiperContainer } from "@components";
-import { fatchData } from "@utility/utilits";
-import { useEffect, useState } from "react";
+import { Testimonial as TestimonialType } from "@constant/type";
 import SwiperCore, {
   Autoplay,
   EffectFade,
@@ -12,33 +11,12 @@ import { Heading } from "./Heading";
 
 SwiperCore.use([Pagination, Navigation, EffectFade, Autoplay]);
 
-export interface TestimonialItem {
-  name: string;
-  img: string;
-  profession: string;
-  details: string;
-  className: string;
+interface Props {
+  testimonialContent: TestimonialType;
 }
 
-export interface Testimonials {
-  title: string;
-  heading1: string;
-  heading2: string;
-  testimonials: TestimonialItem[];
-}
-
-export const Testimonial = () => {
-  const [data, setData] = useState<Testimonials>(null);
-
-  const getData = async () => {
-    setData(await fatchData("/static/testimonial.json"));
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
-  const { title, heading1, heading2 } = data || {};
+export const Testimonial: React.FC<Props> = ({ testimonialContent }) => {
+  const { title, heading1, heading2, testimonials } = testimonialContent || {};
 
   return (
     <div className="dizme_tm_section" id="testimonials">
@@ -46,16 +24,16 @@ export const Testimonial = () => {
         <Heading title={title} heading1={heading1} heading2={heading2} />
         <div className="list_wrapper">
           <div className="total">
-            <SwiperContainer data={data} />
+            <SwiperContainer data={testimonials} />
 
             <BackgroundImages
-              testimonials={data?.testimonials?.slice(0, 4)}
+              testimonials={testimonials?.slice(0, 4)}
               className="left_details"
               circleColors={["green", "yellow", "border"]}
             />
 
             <BackgroundImages
-              testimonials={data?.testimonials?.slice(4, 7)}
+              testimonials={testimonials?.slice(4, 7)}
               className="right_details"
               circleColors={["yellow", "purple", "border"]}
             />

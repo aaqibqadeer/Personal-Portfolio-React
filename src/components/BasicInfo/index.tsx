@@ -1,4 +1,5 @@
 export const BasicInfo = ({ data }) => {
+  const { name, address, bio, mainSkill } = data || {};
   return (
     <>
       <div className="hello">
@@ -6,18 +7,18 @@ export const BasicInfo = ({ data }) => {
       </div>
 
       <div className="name">
-        <h3>{data && data.name ? data.name : "name"}</h3>
+        <h3>{name}</h3>
       </div>
 
       <div className="job">
         <p>
-          A <span className="greenText">{data && data.mainSkill}</span> From{" "}
-          <span className="purpleText">{data.address}</span>
+          A <span className="greenText">{mainSkill}</span> From{" "}
+          <span className="purpleText">{address}</span>
         </p>
       </div>
 
       <div className="text">
-        <p>{data.bio}</p>
+        <p>{bio}</p>
       </div>
     </>
   );

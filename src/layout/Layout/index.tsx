@@ -1,32 +1,28 @@
+import { SiteSetting } from "@constant/type";
+import { useThemeContext } from "@context/theme";
 import {
   aTagClick,
   dataImage,
-  fatchData,
   scrollTop,
   scroll_,
   stickyNav,
   wowJsAnimation,
 } from "@utility/utilits";
-import { FC, Fragment, useEffect, useState } from "react";
+import { FC, Fragment, useEffect } from "react";
 import { Cursor, Header, PreLoader, Progressbar } from "..";
 import { ImageView, VideoPopup } from "../../components";
 import { MobileMenu } from "../MobileMenu";
 
 interface Props {
-  children?: React.ReactNode;
-  dark?: boolean;
+  children: React.ReactNode;
+  siteSetting: SiteSetting;
 }
 
-export const Layout: FC<Props> = ({ children, dark }) => {
-  const [siteInfo, setSiteInfo] = useState<any>({});
-
-  const setData = async () => {
-    setSiteInfo(await fatchData("/static/siteSetting.json"));
-    dataImage();
-  };
+export const Layout: FC<Props> = ({ children, siteSetting }) => {
+  const { darkTheme } = useThemeContext();
 
   useEffect(() => {
-    setData();
+    dataImage();
   }, []);
 
   const subscribeEvents = () => {
@@ -55,7 +51,7 @@ export const Layout: FC<Props> = ({ children, dark }) => {
       <ImageView />
       <VideoPopup />
       <div className="dizme_tm_all_wrap" data-magic-cursor="show">
-        <MobileMenu logo={siteInfo?.logo?.[dark ? "dark" : "light"]} />
+        <MobileMenu logo={siteSetting?.logo?.[darkTheme ? "dark" : "light"]} />
         <Header />
         {children}
         <Cursor />

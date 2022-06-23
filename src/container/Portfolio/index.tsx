@@ -1,18 +1,16 @@
 import { Brushes } from "@components";
 import { DetailsPopup } from "@components/popup/DetailsPopup";
-import { jsonFiles } from "@constant/constant";
+import { Portfolio as PortfolioType } from "@constant/type";
 import { dataImage, portfolioHover } from "@utility/utilits";
 import Isotope from "isotope-layout";
 import { useEffect, useRef, useState } from "react";
-import { useFetchJSON } from "../../hooks/useFetchJSON";
-import {
-  config,
-  DELAY_TIME,
-  PORTFOLIO_CATEGORIES,
-  projectList,
-} from "./constant";
+import { config, DELAY_TIME, PORTFOLIO_CATEGORIES } from "./constant";
 import { PortfolioCategories } from "./PortfolioCategories";
 import { PortfolioList } from "./PortfolioList";
+
+interface Props {
+  portfolioContent: PortfolioType;
+}
 
 export const Heading = ({ heading, tagline, description }) => {
   return (
@@ -24,9 +22,8 @@ export const Heading = ({ heading, tagline, description }) => {
   );
 };
 
-const Portfolio = () => {
-  const { data } = useFetchJSON(jsonFiles.PORTFOLIO);
-  const { heading, tagline, description } = data || {};
+const Portfolio: React.FC<Props> = ({ portfolioContent }) => {
+  const { heading, tagline, description, projectList } = portfolioContent || {};
   const [filterKey, setFilterKey] = useState("*");
   const [popup, setPopup] = useState(0);
   const isotope = useRef(null);
@@ -57,7 +54,12 @@ const Portfolio = () => {
 
   return (
     <div className="dizme_tm_section" id="portfolio">
-      <DetailsPopup open={popup} close={() => setPopup(0)} id={popup} />
+      <DetailsPopup
+        open={popup}
+        close={() => setPopup(0)}
+        id={popup}
+        projectList={projectList}
+      />
       <div className="dizme_tm_portfolio">
         <div className="container">
           <Heading
@@ -72,7 +74,7 @@ const Portfolio = () => {
           />
           <div className="dizme_tm_portfolio_titles" />
           <PortfolioList
-            portfolioList={projectList}
+            projectList={projectList}
             onClick={(id: number) => setPopup(id)}
           />
         </div>

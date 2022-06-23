@@ -1,23 +1,16 @@
-import { activeSkillProgress, fatchData } from "@utility/utilits";
-import { useEffect, useState } from "react";
+import { Skills as SkillsType } from "@constant/type";
+import { activeSkillProgress } from "@utility/utilits";
+import { useEffect } from "react";
 import { SkillsLayout } from "./SkillsLayout";
 import { SkillsList } from "./SkillsList";
-import { Info } from "./type";
 
 interface Props {
-  dark?: boolean;
+  skillsContent: SkillsType;
 }
 
-export const Skills: React.FC<Props> = ({ dark }) => {
-  const [data, setData] = useState<Info>(null);
-
-  const getData = async () => {
-    setData(await fatchData("/static/info.json"));
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
+export const Skills: React.FC<Props> = ({ skillsContent }) => {
+  const { skillTitle, skillTagline, skillDescription, skillsList } =
+    skillsContent || {};
 
   useEffect(() => {
     window?.addEventListener("scroll", activeSkillProgress);
@@ -31,12 +24,12 @@ export const Skills: React.FC<Props> = ({ dark }) => {
           data-align="left"
           className="dizme_tm_main_title wow fadeInUp"
         >
-          <span>{data?.skillTitle}</span>
-          <h3>{data?.skillTagline}</h3>
-          <p>{data?.skillDescription}</p>
+          <span>{skillTitle}</span>
+          <h3>{skillTagline}</h3>
+          <p>{skillDescription}</p>
         </div>
 
-        {data && <SkillsList skills={data.skills} />}
+        {skillsList && <SkillsList skills={skillsList} />}
       </div>
 
       <div className="right">

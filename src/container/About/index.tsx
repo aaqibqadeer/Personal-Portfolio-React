@@ -1,11 +1,14 @@
 import { Badge } from "@components";
+import { About as AboutType } from "@constant/type";
 import Image from "next/image";
-import { useFetchJSON } from "../../hooks/useFetchJSON";
 import { AboutWrapper } from "./AboutWrapper";
 
-export const About = () => {
-  const { data } = useFetchJSON("/about");
-  const { tagline, title, bio, totalProject, experience } = data || {};
+interface Props {
+  aboutContent: AboutType;
+}
+
+export const About: React.FC<Props> = ({ aboutContent }) => {
+  const { tagline, title, bio, totalProject, experience } = aboutContent || {};
   const { paragraph1, paragraph2, paragraph3, paragraph4 } = bio || {};
   return (
     <AboutWrapper>

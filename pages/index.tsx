@@ -1,7 +1,8 @@
-import { HomeData } from "@constant/type";
+import { HomeContent } from "@constant/type";
 import { About, Home, News, Skills, Testimonial } from "@container";
-import { useThemeContext } from "@context";
+import content from "@data/home.json";
 import { Layout } from "@layout";
+import { GetStaticProps } from "next";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 
@@ -9,25 +10,42 @@ const Portfolio = dynamic(() => import("../src/container/Portfolio"), {
   ssr: false,
 });
 interface Props {
-  content: HomeData;
+  content: HomeContent;
 }
 
 const Index: React.FC<Props> = ({ content }) => {
-  const { darkTheme } = useThemeContext();
-  console.log({ content });
+  const {
+    pageTitle,
+    info,
+    about,
+    portfolio,
+    skills: skillsContent,
+    testimonial,
+    blog,
+    siteSetting,
+  } = content || {};
 
   return (
-    <Layout dark={darkTheme}>
+    <Layout siteSetting={siteSetting}>
       <Head>
-        <title>Aaqib Qadeer Soomro | Home</title>
+        <title>{pageTitle}</title>
       </Head>
-      <Home dark={darkTheme} />
-      <About />
-      <Portfolio />
-      <Skills dark={darkTheme} />
-      <Testimonial />
-      <News />
+      <Home introContent={info} skills={skillsContent.skillsList} />
+      <About aboutContent={about} />
+      <Portfolio portfolioContent={portfolio} />
+      <Skills skillsContent={skillsContent} />
+      <Testimonial testimonialContent={testimonial} />
+      <News blogContent={blog} />
     </Layout>
   );
 };
+
+export const getStaticProps: GetStaticProps = () => {
+  return {
+    props: {
+      content,
+    },
+  };
+};
+
 export default Index;

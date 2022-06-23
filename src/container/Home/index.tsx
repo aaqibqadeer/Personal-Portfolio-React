@@ -5,45 +5,37 @@ import {
   ProfilePicture,
   SocialMediaIcons,
 } from "@components";
-import { fatchData } from "@utility/utilits";
-import { useEffect, useState } from "react";
+import { Info, Skill } from "@constant/type";
 import { HomeWrapper } from "./HomeWrapper";
 
 interface Props {
-  dark?: boolean;
+  introContent: Info;
+  skills: Skill[];
 }
 
-export const Home: React.FC<Props> = ({ dark }) => {
-  const [data, setData] = useState<any>({});
-
-  const getData = async () => {
-    setData(await fatchData("/static/info.json"));
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
+export const Home: React.FC<Props> = ({ introContent, skills }) => {
+  const { img, social, ...basicInfo } = introContent || {};
 
   return (
-    <HomeWrapper dark={dark}>
+    <HomeWrapper>
       <div className="container">
         <div className="content">
           <div className="details">
-            <BasicInfo data={data} />
+            <BasicInfo data={basicInfo} />
             <div className="button">
               <AboutMeButton />
-              <SocialMediaIcons social={data.social} />
+              <SocialMediaIcons social={social} />
             </div>
           </div>
 
           <div className="avatar">
             <div className="image">
-              <ProfilePicture img={data?.img} skills={data?.skills} />
+              <ProfilePicture img={img} skills={skills} />
             </div>
           </div>
         </div>
       </div>
-      <MouseIcon dark={dark} />
+      <MouseIcon />
     </HomeWrapper>
   );
 };

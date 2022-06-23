@@ -1,5 +1,7 @@
-export interface HomeData {
+export interface HomeContent {
+  pageTitle: string;
   info: Info;
+  skills: Skills;
   about: About;
   portfolio: Portfolio;
   testimonial: Testimonial;
@@ -8,14 +10,29 @@ export interface HomeData {
   service: Service[];
   siteSetting: SiteSetting;
   workProcess: WorkProcess[];
+  contact: Contact;
 }
 
+export interface Info {
+  name: string;
+  address: string;
+  bio: string;
+  mainSkill: string;
+  img: string;
+  social: Social[];
+}
 export interface About {
   title: string;
   tagline: string;
   bio: Bio;
   totalProject: number;
   experience: number;
+}
+export interface Skills {
+  skillTitle: string;
+  skillTagline: string;
+  skillDescription: string;
+  skillsList: Skill[];
 }
 
 export interface Bio {
@@ -38,21 +55,6 @@ export interface DateClass {
   date: string;
   month: string;
 }
-
-export interface Info {
-  name: string;
-  address: string;
-  bio: string;
-  mainSkill: string;
-  img: string;
-  skillTitle: string;
-  skillTagline: string;
-  skillDescription: string;
-  skills: Skill[];
-  social: Social[];
-  contact: Contact;
-}
-
 export interface Contact {
   address: string;
   email: string;
@@ -87,8 +89,24 @@ export interface Portfolio {
   heading: string;
   tagline: string;
   description: string;
+  projectList: ProjectList[];
 }
 
+export interface ProjectList {
+  id: number;
+  title: string;
+  type: string;
+  category: string;
+  image: string;
+  href: string;
+  images: string[];
+  shortDesc: string;
+  longDesc: string;
+  client: string;
+  date: string;
+  totalTime: string;
+  techStack: string;
+}
 export interface Service {
   title: string;
   price: string;

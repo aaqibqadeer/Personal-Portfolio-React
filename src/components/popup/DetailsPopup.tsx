@@ -1,5 +1,3 @@
-import { projectList } from "../../container/Portfolio/constant";
-
 export const CloseButton = ({ close }) => {
   return (
     <div className="close">
@@ -127,7 +125,7 @@ const AdditionImages = ({ images }) => {
   ) : null;
 };
 
-export const DetailsPopup = ({ open, close, id }) => {
+export const DetailsPopup = ({ open, close, id, projectList }) => {
   const selectedProject = projectList.find((project) => project.id === id);
   const {
     image,

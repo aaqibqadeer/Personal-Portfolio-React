@@ -1,20 +1,19 @@
 import { BlogPopUp } from "@components";
-import { aTagClick, fatchData } from "@utility/utilits";
+import { Blog } from "@constant/type";
+import { aTagClick } from "@utility/utilits";
 import { useEffect, useState } from "react";
 import { BlogList } from "./BlogList";
 
-export const News = () => {
-  const [data, setData] = useState([]);
+interface Props {
+  blogContent: Blog[];
+}
+
+export const News: React.FC<Props> = ({ blogContent }) => {
   const [popupData, setPopupData] = useState({});
   const [popup, setPopup] = useState(false);
 
-  const getData = async () => {
-    setData(await fatchData("/static/blog.json"));
-    aTagClick();
-  };
-
   useEffect(() => {
-    getData();
+    aTagClick();
   }, []);
 
   const onClick = (blog) => {
@@ -31,7 +30,7 @@ export const News = () => {
             <span>From My Blog</span>
             <h3>{`Our Recent Updates, Blog, Tips, Tricks & More`}</h3>
           </div>
-          <BlogList data={data} onClick={onClick} />
+          <BlogList data={blogContent} onClick={onClick} />
         </div>
 
         <div className="brush_1 wow zoomIn" data-wow-duration="1s">
