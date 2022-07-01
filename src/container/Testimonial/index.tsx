@@ -1,4 +1,4 @@
-import { SwiperContainer } from "@components";
+import { Brush, SwiperContainer } from "@components";
 import { Testimonial as TestimonialType } from "@constant/type";
 import SwiperCore, {
   Autoplay,
@@ -40,9 +40,10 @@ export const Testimonial: React.FC<Props> = ({ testimonialContent }) => {
           </div>
         </div>
 
-        <div className="brush_1 wow fadeInRight" data-wow-duration="1s">
-          <img src="img/brushes/testimonials/1.png" alt="image" />
-        </div>
+        <Brush
+          imagePath="/img/brushes/testimonials/1.png"
+          className="brush_1 fadeInRight"
+        />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { BlogPopUp } from "@components";
+import { BlogPopUp, Brushes } from "@components";
 import { Blog } from "@constant/type";
 import { aTagClick } from "@utility/utilits";
 import { useEffect, useState } from "react";
@@ -11,6 +11,10 @@ interface Props {
 export const News: React.FC<Props> = ({ blogContent }) => {
   const [popupData, setPopupData] = useState({});
   const [popup, setPopup] = useState(false);
+  const brushList = [
+    { num: 1, className: "brush_1 zoomIn" },
+    { num: 2, className: "brush_2 zoomIn" },
+  ];
 
   useEffect(() => {
     aTagClick();
@@ -32,14 +36,7 @@ export const News: React.FC<Props> = ({ blogContent }) => {
           </div>
           <BlogList data={blogContent} onClick={onClick} />
         </div>
-
-        <div className="brush_1 wow zoomIn" data-wow-duration="1s">
-          <img src="img/brushes/news/1.png" alt="image" />
-        </div>
-
-        <div className="brush_2 wow zoomIn" data-wow-duration="1s">
-          <img src="img/brushes/news/2.png" alt="image" />
-        </div>
+        <Brushes imagePath="news" brushList={brushList} />
       </div>
     </div>
   );

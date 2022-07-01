@@ -1,6 +1,5 @@
-import { Badge } from "@components";
+import { Badge, Brushes } from "@components";
 import { About as AboutType } from "@constant/type";
-import Image from "next/image";
 import { AboutWrapper } from "./AboutWrapper";
 
 interface Props {
@@ -10,6 +9,11 @@ interface Props {
 export const About: React.FC<Props> = ({ aboutContent }) => {
   const { tagline, title, bio, totalProject, experience } = aboutContent || {};
   const { paragraph1, paragraph2, paragraph3, paragraph4 } = bio || {};
+  const brushList = [
+    { num: 1, className: "brush_1 fadeInLeft" },
+    { num: 2, className: "brush_2 fadeInRight" },
+  ];
+
   return (
     <AboutWrapper>
       <div className="container">
@@ -57,13 +61,7 @@ export const About: React.FC<Props> = ({ aboutContent }) => {
         </div>
       </div>
 
-      <div className="brush_1 wow fadeInLeft" data-wow-duration="1s">
-        <img src="/img/brushes/about/1.png" alt="image" />
-      </div>
-
-      <div className="brush_2 wow fadeInRight" data-wow-duration="1s">
-        <Image src="/img/brushes/about/2.png" alt="image" layout="fill" />
-      </div>
+      <Brushes imagePath="about" brushList={brushList} />
     </AboutWrapper>
   );
 };
