@@ -1,5 +1,6 @@
 import { Badge, Brushes } from "@components";
 import { About as AboutType } from "@constant/type";
+import Image from "next/image";
 import { AboutWrapper } from "./AboutWrapper";
 
 interface Props {
@@ -20,7 +21,12 @@ export const About: React.FC<Props> = ({ aboutContent }) => {
         <div className="wrapper">
           <div className="left">
             <div className="image">
-              <img src={`img/about/about.webp`} alt="image" />
+              <Image
+                src={`/img/about/about.webp`}
+                alt="image"
+                width={485}
+                height={478}
+              />
               <Badge
                 className="year"
                 counterNumber={experience}

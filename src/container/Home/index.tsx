@@ -30,7 +30,7 @@ export const Home: React.FC<Props> = ({ introContent, skills }) => {
 
           <div className="avatar">
             <div className="image">
-              <ProfilePicture img={img} skills={skills} />
+              <ProfilePicture skills={skills} />
             </div>
           </div>
         </div>
