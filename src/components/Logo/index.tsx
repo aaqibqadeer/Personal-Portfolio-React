@@ -1,8 +1,15 @@
-export const Logo = ({ logo }) => {
+import Image from "next/image";
+
+export const Logo = () => {
   return (
     <div className="logo">
       <a href="#home">
-        <img src={logo ? logo : "img/logo/logo.png"} alt="image" />
+        <Image
+          src={"/img/logo/logo.png"}
+          alt="Logo"
+          width="110"
+          height="20.33"
+        />
       </a>
     </div>
   );

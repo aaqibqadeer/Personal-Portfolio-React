@@ -21,7 +21,7 @@ export const Header = ({ logo }: { logo?: string }) => {
 
   return (
     <HeaderWrapper>
-      <Logo logo={logo} />
+      <Logo />
       <div className="menu">
         <ul className="anchor_nav">
           {headerList?.map((header) => {

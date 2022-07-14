@@ -51,7 +51,7 @@ export const Layout: FC<Props> = ({ children, siteSetting }) => {
       <ImageView />
       <VideoPopup />
       <div className="dizme_tm_all_wrap" data-magic-cursor="show">
-        <MobileMenu logo={siteSetting?.logo?.[darkTheme ? "dark" : "light"]} />
+        <MobileMenu />
         <Header />
         {children}
         <Cursor />

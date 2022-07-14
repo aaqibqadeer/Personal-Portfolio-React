@@ -3,14 +3,14 @@ import { header, HEADER_LIST } from "@constant/constant";
 import { useState } from "react";
 import { DropdownWrapper, MobileMenuWrapper } from ".";
 
-export const MobileMenu = ({ logo }) => {
+export const MobileMenu = () => {
   const [toggle, setToggle] = useState(false);
   const headerList = Object.values(header);
 
   return (
     <div className="dizme_tm_mobile_menu">
       <MobileMenuWrapper>
-        <Logo logo={logo} />
+        <Logo />
         <HamburgerMenu toggle={toggle} setToggle={setToggle} />
       </MobileMenuWrapper>
       <DropdownWrapper toggle={toggle}>

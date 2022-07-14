@@ -1,5 +1,7 @@
 import { Skills as SkillsType } from "@constant/type";
 import { activeSkillProgress } from "@utility/utilits";
+import Image from "next/image";
+import skillsImg from "public/img/skills/1.webp";
 import { useEffect } from "react";
 import { SkillsLayout } from "./SkillsLayout";
 import { SkillsList } from "./SkillsList";
@@ -33,7 +35,7 @@ export const Skills: React.FC<Props> = ({ skillsContent }) => {
       </div>
 
       <div className="right">
-        <img src={`img/skills/1.webp`} alt="image" />
+        <Image src={skillsImg} alt="image" />
       </div>
     </SkillsLayout>
   );
