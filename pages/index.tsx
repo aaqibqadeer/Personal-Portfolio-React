@@ -1,5 +1,5 @@
 import { HomeContent } from "@constant/type";
-import { About, Home, News, Skills, Testimonial } from "@container";
+import { About, Home } from "@container";
 import content from "@data/home.json";
 import { Layout } from "@layout";
 import { GetStaticProps } from "next";
@@ -9,6 +9,9 @@ import Head from "next/head";
 const Portfolio = dynamic(() => import("../src/container/Portfolio"), {
   ssr: false,
 });
+const Skills = dynamic(() => import("@container/Skills"));
+const News = dynamic(() => import("@container/News"));
+const Testimonial = dynamic(() => import("@container/Testimonial"));
 interface Props {
   content: HomeContent;
 }

@@ -8,7 +8,7 @@ interface Props {
   blogContent: Blog[];
 }
 
-export const News: React.FC<Props> = ({ blogContent }) => {
+const News: React.FC<Props> = ({ blogContent }) => {
   const [popupData, setPopupData] = useState({});
   const [popup, setPopup] = useState(false);
   const brushList = [
@@ -41,3 +41,5 @@ export const News: React.FC<Props> = ({ blogContent }) => {
     </div>
   );
 };
+
+export default News;

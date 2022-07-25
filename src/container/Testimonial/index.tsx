@@ -15,7 +15,7 @@ interface Props {
   testimonialContent: TestimonialType;
 }
 
-export const Testimonial: React.FC<Props> = ({ testimonialContent }) => {
+const Testimonial: React.FC<Props> = ({ testimonialContent }) => {
   const { title, heading1, heading2, testimonials } = testimonialContent || {};
 
   return (
@@ -48,3 +48,5 @@ export const Testimonial: React.FC<Props> = ({ testimonialContent }) => {
     </div>
   );
 };
+
+export default Testimonial;

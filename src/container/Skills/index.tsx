@@ -10,7 +10,7 @@ interface Props {
   skillsContent: SkillsType;
 }
 
-export const Skills: React.FC<Props> = ({ skillsContent }) => {
+const Skills: React.FC<Props> = ({ skillsContent }) => {
   const { skillTitle, skillTagline, skillDescription, skillsList } =
     skillsContent || {};
 
@@ -40,3 +40,5 @@ export const Skills: React.FC<Props> = ({ skillsContent }) => {
     </SkillsLayout>
   );
 };
+
+export default Skills;
