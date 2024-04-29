@@ -21,16 +21,16 @@ export const Home: React.FC<Props> = ({ introContent, skills }) => {
       <div className="container">
         <div className="content">
           <div className="details">
-            {/* <BasicInfo data={basicInfo} /> */}
+            <BasicInfo data={basicInfo} />
             <div className="button">
-              {/* <AboutMeButton /> */}
-              {/* <SocialMediaIcons social={social} /> */}
+              <AboutMeButton />
+              <SocialMediaIcons social={social} />
             </div>
           </div>
 
           <div className="avatar">
             <div className="image">
-              {/* <ProfilePicture skills={skills} /> */}
+              <ProfilePicture skills={skills} />
             </div>
           </div>
         </div>
