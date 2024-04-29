@@ -33,14 +33,12 @@ const Index: React.FC<Props> = ({ content }) => {
       <Head>
         <title>{pageTitle}</title>
       </Head>
-      // <Home introContent={info} skills={skillsContent.skillsList} />
-      /*
+      <Home introContent={info} skills={skillsContent.skillsList} />
       <About aboutContent={about} />
       <Portfolio portfolioContent={portfolio} />
       <Skills skillsContent={skillsContent} />
       <Testimonial testimonialContent={testimonial} />
       <News blogContent={blog} />
-      */j
     </Layout>
   );
   // return (
